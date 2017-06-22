@@ -1,0 +1,72 @@
+{
+  "operations": [
+    {
+      "id": "getCalendarsEvent",
+      "path": "$",
+      "parameters": [
+        {
+          "name": "calendarId"
+        },
+        {
+          "name": "eventId"
+        }
+      ]
+    },
+    {
+      "id": "listCalendarsEvent",
+      "path": "$.items",
+      "parameters": [
+        {
+          "name": "calendarId"
+        }
+      ]
+    },
+    {
+      "id": "insertCalendarsEvent",
+      "path": "$",
+      "type": "INSERT"
+    },
+    {
+      "id": "deleteCalendarsEvent",
+      "path": "$",
+      "type": "DELETE"
+    },
+    {
+      "id": "patchCalendarsEvent",
+      "path": "$",
+      "type": "UPDATE"
+    },
+    {
+      "id": "watchCalendarsEvent",
+      "path": "$",
+      "type": "INSERT"
+    },
+    {
+      "id": "getCalendars",
+      "path": "$"
+    },
+    {
+      "id": "stopChannel",
+      "path": "$",
+      "type": "DELETE"
+    }
+  ],
+  "swagger": {
+    "auth": {
+      "type": "OAUTH",
+      "params": {
+        "header": {
+          "string": "Authorization"
+        },
+        "type": {
+          "string": "Bearer"
+        },
+        "scope": {
+          "string": "https://www.googleapis.com/auth/calendar"
+        }
+      }
+    },
+    "source": "google_calendar.json",
+    "url": "https://www.googleapis.com"
+  }
+}
