@@ -1,60 +1,45 @@
 {
-  "v1": {
-    "operations": [{
-      "id": "getCalendarsEvent",
-      "path": "$",
-      "parameters": [{
-        "name": "calendarId"
-      }, {
-        "name": "eventId"
-      }]
-    }, {
-      "id": "listCalendarsEvent",
-      "path": "$.items",
-      "parameters": [{
-        "name": "calendarId"
-      }]
-    }, {
-      "id": "insertCalendarsEvent",
-      "path": "$",
-      "type": "INSERT"
-    }, {
-      "id": "deleteCalendarsEvent",
-      "path": "$",
-      "type": "DELETE"
-    }, {
-      "id": "patchCalendarsEvent",
-      "path": "$",
-      "type": "UPDATE"
-    }, {
-      "id": "watchCalendarsEvent",
-      "path": "$",
-      "type": "INSERT"
-    }, {
-      "id": "getCalendars",
-      "path": "$"
-    }, {
-      "id": "stopChannel",
-      "path": "$",
-      "type": "DELETE"
-    }],
+  "v2": {
     "swagger": {
       "auth": {
         "type": "OAUTH",
         "params": {
+          "scope": {
+            "string": "https://www.googleapis.com/auth/calendar"
+          },
           "header": {
             "string": "Authorization"
           },
           "type": {
             "string": "Bearer"
-          },
-          "scope": {
-            "string": "https://www.googleapis.com/auth/calendar"
           }
         }
       },
       "source": "google_calendar.json",
-      "url": "https://www.googleapis.com"
-    }
+      "url": "https://www.googleapis.com",
+      "operations": [{
+        "id": "getCalendarsEvent"
+      }, {
+        "id": "listCalendarsEvent"
+      }, {
+        "id": "insertCalendarsEvent",
+        "type": "INSERT"
+      }, {
+        "id": "deleteCalendarsEvent",
+        "type": "DELETE"
+      }, {
+        "id": "patchCalendarsEvent",
+        "type": "UPDATE"
+      }, {
+        "id": "watchCalendarsEvent",
+        "type": "INSERT"
+      }, {
+        "id": "getCalendars"
+      }, {
+        "id": "stopChannel",
+        "type": "DELETE"
+      }]
+    },
+    "description": "Google calendar integration"
   }
 }
