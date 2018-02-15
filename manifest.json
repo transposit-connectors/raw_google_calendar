@@ -16,29 +16,7 @@
         }
       },
       "source": "google_calendar.json",
-      "url": "https://www.googleapis.com",
-      "operations": [{
-        "id": "getCalendarsEvent"
-      }, {
-        "id": "listCalendarsEvent"
-      }, {
-        "id": "insertCalendarsEvent",
-        "type": "INSERT"
-      }, {
-        "id": "deleteCalendarsEvent",
-        "type": "DELETE"
-      }, {
-        "id": "patchCalendarsEvent",
-        "type": "UPDATE"
-      }, {
-        "id": "watchCalendarsEvent",
-        "type": "INSERT"
-      }, {
-        "id": "getCalendars"
-      }, {
-        "id": "stopChannel",
-        "type": "DELETE"
-      }]
+      "url": "https://www.googleapis.com"
     },
     "description": "Google calendar integration"
   }
