@@ -13,6 +13,15 @@
           "type": {
             "string": "Bearer"
           }
+        },
+        "oauthConfig": {
+          "name": "Google Calendar",
+          "authUri": "https://accounts.google.com/o/oauth2/v2/auth",
+          "accessTokenUri": "https://www.googleapis.com/oauth2/v4/token",
+          "responseType": "code",
+          "accessType": "offline",
+          "prompt": "select_account consent",
+          "oauthDocumentation": "https://developers.google.com/identity/protocols/OAuth2WebServer"
         }
       },
       "source": "google_calendar.json",
