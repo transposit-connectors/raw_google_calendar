@@ -4,9 +4,6 @@
       "auth": {
         "type": "OAUTH",
         "params": {
-          "scope": {
-            "string": "https://www.googleapis.com/auth/calendar"
-          },
           "header": {
             "string": "Authorization"
           },
@@ -21,7 +18,9 @@
           "responseType": "code",
           "accessType": "offline",
           "prompt": "select_account consent",
-          "oauthDocumentation": "https://developers.google.com/identity/protocols/OAuth2WebServer"
+          "oauthDocumentation":
+            "https://developers.google.com/identity/protocols/OAuth2WebServer",
+          "scope": "https://www.googleapis.com/auth/calendar"
         }
       },
       "source": "google_calendar.json",
