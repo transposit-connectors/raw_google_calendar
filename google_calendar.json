@@ -907,6 +907,9 @@
         "produces": [
           "application/json"
         ],
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "calendarId",
