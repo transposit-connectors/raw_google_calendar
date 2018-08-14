@@ -23,7 +23,7 @@
           "scope": "https://www.googleapis.com/auth/calendar"
         }
       },
-      "source": "google_calendar.json",
+      "source": "google_calendar.yml",
       "url": "https://www.googleapis.com"
     },
     "description": "Google calendar integration"
