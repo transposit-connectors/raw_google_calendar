@@ -1530,7 +1530,7 @@ definitions:
         description: ETag of the resource.
         type: string
       id:
-        description: Identifier of the calendar. To retrieve IDs call the list_calendarlist method.
+        description: Identifier of the calendar. To retrieve IDs call the list_calendarlist method. Note that when creating a calendar, this field should not be filled out.
         type: string
       kind:
         default: 'calendar#calendar'
@@ -1540,7 +1540,7 @@ definitions:
         description: Geographic location of the calendar as free-form text. Optional.
         type: string
       summary:
-        description: Title of the calendar.
+        description: Title of the calendar. Required on a create_calendar operation
         type: string
       timeZone:
         description: 'The time zone of the calendar. (Formatted as an IANA Time Zone Database name, e.g. "Europe/Zurich".) Optional.'
