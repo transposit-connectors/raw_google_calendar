@@ -3,6 +3,10 @@ schemes:
   - https
 host: www.googleapis.com
 basePath: /calendar/v3
+consumes:
+- application/json
+produces:
+- application/json
 info:
   contact:
     name: Google
