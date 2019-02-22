@@ -11,7 +11,7 @@ info:
   contact:
     name: Google
     url: 'https://google.com'
-  description: Manipulates events and other calendar data.
+  description: Manipulates events and other calendar data. Original file from https://github.com/APIs-guru/openapi-directory/blob/master/APIs/googleapis.com/calendar/v3/swagger.yaml
   title: Calendar
   version: v3
   x-apiClientRegistration:
