@@ -540,7 +540,7 @@ paths:
           minimum: 1
           name: maxResults
           type: integer
-        - description: 'The order of the events returned in the result. Optional. The default is an unspecified, stable order.'
+        - description: 'The order of the events returned in the result. Optional. The default is an unspecified, stable order. Note that if you want to order by startTime, you must also set the parameter "singleEvents" to true'
           enum:
             - startTime
             - updated
