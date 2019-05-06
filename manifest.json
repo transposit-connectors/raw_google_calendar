@@ -3,6 +3,7 @@
     "swagger": {
       "auth": {
         "type": "OAUTH",
+        "authSettingsRequired": true,
         "params": {
           "header": {
             "string": "Authorization"
