@@ -516,6 +516,18 @@ paths:
       description: Returns events on the specified calendar.
       operationId: get_calendar_events
       parameters:
+        - description: 'Upper bound (exclusive) for an event''s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin.'
+          in: query
+          name: timeMax
+          type: string
+        - description: 'Lower bound (inclusive) for an event''s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax.'
+          in: query
+          name: timeMin
+          type: string
+        - description: Time zone used in the response. Optional. The default is the time zone of the calendar.
+          in: query
+          name: timeZone
+          type: string
         - description: 'Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.'
           in: query
           name: alwaysIncludeEmail
@@ -598,18 +610,6 @@ paths:
             Optional. The default is to return all entries.
           in: query
           name: syncToken
-          type: string
-        - description: 'Upper bound (exclusive) for an event''s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin.'
-          in: query
-          name: timeMax
-          type: string
-        - description: 'Lower bound (inclusive) for an event''s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax.'
-          in: query
-          name: timeMin
-          type: string
-        - description: Time zone used in the response. Optional. The default is the time zone of the calendar.
-          in: query
-          name: timeZone
           type: string
         - description: 'Lower bound for an event''s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.'
           in: query
