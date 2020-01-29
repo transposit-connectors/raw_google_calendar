@@ -666,7 +666,7 @@ paths:
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
-          type: boolean
+          type: string
           enum: 
             - all
             - externalOnly
