@@ -1,45 +1,45 @@
-swagger: '2.0'
+swagger: "2.0"
 schemes:
   - https
 host: www.googleapis.com
 basePath: /calendar/v3
 consumes:
-- application/json
+  - application/json
 produces:
-- application/json
+  - application/json
 info:
   contact:
     name: Google
-    url: 'https://google.com'
+    url: "https://google.com"
   description: Manipulates events and other calendar data. Original file from https://github.com/APIs-guru/openapi-directory/blob/master/APIs/googleapis.com/calendar/v3/swagger.yaml
   title: Calendar
   version: v3
   x-apiClientRegistration:
-    url: 'https://console.developers.google.com'
+    url: "https://console.developers.google.com"
   x-apisguru-categories:
     - time_management
   x-logo:
-    url: 'https://www.gstatic.com/images/icons/material/product/2x/calendar_64dp.png'
+    url: "https://www.gstatic.com/images/icons/material/product/2x/calendar_64dp.png"
   x-origin:
     - converter:
-        url: 'https://github.com/lucybot/api-spec-converter'
+        url: "https://github.com/lucybot/api-spec-converter"
         version: 2.6.2
       format: google
-      url: 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'
+      url: "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
       version: v1
   x-preferred: true
   x-providerName: googleapis.com
   x-serviceName: calendar
 externalDocs:
-  url: 'https://developers.google.com/google-apps/calendar/firstapp'
+  url: "https://developers.google.com/google-apps/calendar/firstapp"
 securityDefinitions:
   Oauth2:
-    authorizationUrl: 'https://accounts.google.com/o/oauth2/auth'
+    authorizationUrl: "https://accounts.google.com/o/oauth2/auth"
     description: Oauth 2.0 authentication
     flow: implicit
     scopes:
-      'https://www.googleapis.com/auth/calendar': Manage your calendars
-      'https://www.googleapis.com/auth/calendar.readonly': View your calendars
+      "https://www.googleapis.com/auth/calendar": Manage your calendars
+      "https://www.googleapis.com/auth/calendar.readonly": View your calendars
     type: oauth2
 parameters:
   alt:
@@ -56,7 +56,7 @@ parameters:
     name: fields
     type: string
   key:
-    description: 'API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.'
+    description: "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
     in: query
     name: key
     type: string
@@ -93,13 +93,13 @@ tags:
 paths:
   /calendars:
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Creates a secondary calendar.
       operationId: create_calendar
@@ -107,18 +107,18 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/Calendar'
+            $ref: "#/definitions/Calendar"
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Calendar'
+            $ref: "#/definitions/Calendar"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - calendars
-  '/calendars/{calendarId}':
+  "/calendars/{calendarId}":
     delete:
       description: Deletes a secondary calendar. Use calendars.clear for clearing all events on primary calendars.
       operationId: delete_calendar
@@ -129,11 +129,11 @@ paths:
           required: true
           type: string
       responses:
-        '204':
+        "204":
           description: Successful response
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - calendars
     get:
@@ -146,25 +146,25 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Calendar'
+            $ref: "#/definitions/Calendar"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - calendars
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     patch:
       description: Updates some metadata for a calendar, using patch semantics.
       operationId: update_calendar
@@ -172,20 +172,20 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/Calendar'
+            $ref: "#/definitions/Calendar"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Calendar'
+            $ref: "#/definitions/Calendar"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - calendars
     put:
@@ -195,23 +195,23 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/Calendar'
+            $ref: "#/definitions/Calendar"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Calendar'
+            $ref: "#/definitions/Calendar"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - calendars
-  '/calendars/{calendarId}/acl':
+  "/calendars/{calendarId}/acl":
     get:
       description: Returns the rules in the access control list for the calendar.
       operationId: get_acl_rules
@@ -243,23 +243,23 @@ paths:
           name: syncToken
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Acl'
+            $ref: "#/definitions/Acl"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - acl
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Creates an access control rule.
       operationId: create_acl_rule
@@ -267,7 +267,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/AclRule'
+            $ref: "#/definitions/AclRule"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
@@ -281,29 +281,29 @@ paths:
           in: query
           name: sendUpdates
           type: boolean
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/AclRule'
+            $ref: "#/definitions/AclRule"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - acl
-  '/calendars/{calendarId}/acl/watch':
+  "/calendars/{calendarId}/acl/watch":
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Watch for changes to ACL resources.
       operationId: watch_acl
@@ -325,7 +325,7 @@ paths:
         - in: body
           name: resource
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
         - description: Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.
           in: query
           name: showDeleted
@@ -339,16 +339,16 @@ paths:
           name: syncToken
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - acl
-  '/calendars/{calendarId}/acl/{ruleId}':
+  "/calendars/{calendarId}/acl/{ruleId}":
     delete:
       description: Deletes an access control rule.
       operationId: delete_acl_rule
@@ -364,11 +364,11 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - acl
     get:
@@ -386,25 +386,25 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/AclRule'
+            $ref: "#/definitions/AclRule"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - acl
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     patch:
       description: Updates an access control rule with patch semantics.
       operationId: update_acl_rule
@@ -412,7 +412,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/AclRule'
+            $ref: "#/definitions/AclRule"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
@@ -431,20 +431,20 @@ paths:
           in: query
           name: sendUpdates
           type: boolean
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/AclRule'
+            $ref: "#/definitions/AclRule"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
-        - acl      
+        - acl
     put:
       description: Updates an access control rule.
       operationId: update_acl_rule_all
@@ -452,7 +452,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/AclRule'
+            $ref: "#/definitions/AclRule"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
@@ -471,29 +471,29 @@ paths:
           in: query
           name: sendUpdates
           type: boolean
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/AclRule'
+            $ref: "#/definitions/AclRule"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - acl
-  '/calendars/{calendarId}/clear':
+  "/calendars/{calendarId}/clear":
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.
       operationId: clear_calendar
@@ -504,23 +504,23 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - calendars
-  '/calendars/{calendarId}/events':
+  "/calendars/{calendarId}/events":
     get:
       description: Returns events on the specified calendar.
       operationId: get_calendar_events
       parameters:
-        - description: 'Upper bound (exclusive) for an event''s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin.'
+        - description: "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin."
           in: query
           name: timeMax
           type: string
-        - description: 'Lower bound (inclusive) for an event''s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax.'
+        - description: "Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax."
           in: query
           name: timeMin
           type: string
@@ -528,7 +528,7 @@ paths:
           in: query
           name: timeZone
           type: string
-        - description: 'Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.'
+        - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
           name: alwaysIncludeEmail
           type: boolean
@@ -541,13 +541,13 @@ paths:
           in: query
           name: iCalUID
           type: string
-        - description: 'The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.'
+        - description: "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
           in: query
           minimum: 1
           name: maxAttendees
           type: integer
         - default: 250
-          description: 'Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.'
+          description: "Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional."
           in: query
           minimum: 1
           name: maxResults
@@ -570,7 +570,7 @@ paths:
             type: string
           name: privateExtendedProperty
           type: array
-        - description: 'Free text search terms to find events that match these terms in any field, except for extended properties. Optional.'
+        - description: "Free text search terms to find events that match these terms in any field, except for extended properties. Optional."
           in: query
           name: q
           type: string
@@ -589,7 +589,7 @@ paths:
           in: query
           name: showHiddenInvitations
           type: boolean
-        - description: 'Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.'
+        - description: "Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False."
           in: query
           name: singleEvents
           type: boolean
@@ -611,30 +611,30 @@ paths:
           in: query
           name: syncToken
           type: string
-        - description: 'Lower bound for an event''s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.'
+        - description: "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time."
           in: query
           name: updatedMin
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Events'
+            $ref: "#/definitions/Events"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - events
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Creates an event.
       operationId: create_calendar_event
@@ -642,7 +642,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
@@ -654,7 +654,7 @@ paths:
           minimum: 0
           name: conferenceDataVersion
           type: integer
-        - description: 'The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.'
+        - description: "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
           in: query
           minimum: 1
           name: maxAttendees
@@ -667,7 +667,7 @@ paths:
           in: query
           name: sendUpdates
           type: string
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
@@ -676,24 +676,24 @@ paths:
           name: supportsAttachments
           type: boolean
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - events
-  '/calendars/{calendarId}/events/import':
+  "/calendars/{calendarId}/events/import":
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Imports an event. This operation is used to add a private copy of an existing event to a calendar.
       operationId: import_calendar_event
@@ -701,7 +701,7 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
@@ -718,24 +718,24 @@ paths:
           name: supportsAttachments
           type: boolean
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - events
-  '/calendars/{calendarId}/events/quickAdd':
+  "/calendars/{calendarId}/events/quickAdd":
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Creates an event based on a simple text string.
       operationId: quickAdd_calendar_event
@@ -753,7 +753,7 @@ paths:
           in: query
           name: sendUpdates
           type: boolean
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
@@ -763,29 +763,29 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - events
-  '/calendars/{calendarId}/events/watch':
+  "/calendars/{calendarId}/events/watch":
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Watch for changes to Events resources.
       operationId: watch_calendar_events
       parameters:
-        - description: 'Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.'
+        - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
           name: alwaysIncludeEmail
           type: boolean
@@ -798,18 +798,18 @@ paths:
           in: query
           name: iCalUID
           type: string
-        - description: 'The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.'
+        - description: "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
           in: query
           minimum: 1
           name: maxAttendees
           type: integer
         - default: 250
-          description: 'Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.'
+          description: "Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional."
           in: query
           minimum: 1
           name: maxResults
           type: integer
-        - description: 'The order of the events returned in the result. Optional. The default is an unspecified, stable order.'
+        - description: "The order of the events returned in the result. Optional. The default is an unspecified, stable order."
           enum:
             - startTime
             - updated
@@ -827,14 +827,14 @@ paths:
             type: string
           name: privateExtendedProperty
           type: array
-        - description: 'Free text search terms to find events that match these terms in any field, except for extended properties. Optional.'
+        - description: "Free text search terms to find events that match these terms in any field, except for extended properties. Optional."
           in: query
           name: q
           type: string
         - in: body
           name: resource
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
         - collectionFormat: multi
           description: Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints.
           in: query
@@ -850,7 +850,7 @@ paths:
           in: query
           name: showHiddenInvitations
           type: boolean
-        - description: 'Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.'
+        - description: "Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False."
           in: query
           name: singleEvents
           type: boolean
@@ -872,11 +872,11 @@ paths:
           in: query
           name: syncToken
           type: string
-        - description: 'Upper bound (exclusive) for an event''s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin.'
+        - description: "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin."
           in: query
           name: timeMax
           type: string
-        - description: 'Lower bound (inclusive) for an event''s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax.'
+        - description: "Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMax is set, timeMin must be smaller than timeMax."
           in: query
           name: timeMin
           type: string
@@ -884,23 +884,23 @@ paths:
           in: query
           name: timeZone
           type: string
-        - description: 'Lower bound for an event''s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time.'
+        - description: "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time."
           in: query
           name: updatedMin
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - events
-  '/calendars/{calendarId}/events/{eventId}':
+  "/calendars/{calendarId}/events/{eventId}":
     delete:
       description: Deletes an event.
       operationId: delete_calendar_event
@@ -923,23 +923,23 @@ paths:
           in: query
           name: sendUpdates
           type: boolean
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
       responses:
-        '200':
+        "200":
           description: Successful response
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - events
     get:
       description: Returns an event.
       operationId: get_calendar_event
       parameters:
-        - description: 'Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.'
+        - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
           name: alwaysIncludeEmail
           type: boolean
@@ -953,7 +953,7 @@ paths:
           name: eventId
           required: true
           type: string
-        - description: 'The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.'
+        - description: "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
           in: query
           minimum: 1
           name: maxAttendees
@@ -963,37 +963,37 @@ paths:
           name: timeZone
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - events
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     patch:
       description: Updates an event with patch semantics.
       operationId: update_calendar_event
       parameters:
-        - description: 'Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.'
+        - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
           name: alwaysIncludeEmail
           type: boolean
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
@@ -1010,7 +1010,7 @@ paths:
           name: eventId
           required: true
           type: string
-        - description: 'The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.'
+        - description: "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
           in: query
           minimum: 1
           name: maxAttendees
@@ -1023,7 +1023,7 @@ paths:
           in: query
           name: sendUpdates
           type: boolean
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
@@ -1032,27 +1032,27 @@ paths:
           name: supportsAttachments
           type: boolean
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - events
     put:
       description: Updates an event.
       operationId: update_calendar_event_entire
       parameters:
-        - description: 'Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.'
+        - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
           name: alwaysIncludeEmail
           type: boolean
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
@@ -1069,7 +1069,7 @@ paths:
           name: eventId
           required: true
           type: string
-        - description: 'The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.'
+        - description: "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
           in: query
           minimum: 1
           name: maxAttendees
@@ -1082,7 +1082,7 @@ paths:
           in: query
           name: sendUpdates
           type: boolean
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
@@ -1091,21 +1091,21 @@ paths:
           name: supportsAttachments
           type: boolean
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - events
-  '/calendars/{calendarId}/events/{eventId}/instances':
+  "/calendars/{calendarId}/events/{eventId}/instances":
     get:
       description: Returns instances of the specified recurring event.
       operationId: get_calendar_event_instances
       parameters:
-        - description: 'Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.'
+        - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
           name: alwaysIncludeEmail
           type: boolean
@@ -1119,7 +1119,7 @@ paths:
           name: eventId
           required: true
           type: string
-        - description: 'The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.'
+        - description: "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
           in: query
           minimum: 1
           name: maxAttendees
@@ -1154,36 +1154,36 @@ paths:
           name: timeZone
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Events'
+            $ref: "#/definitions/Events"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - events
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
-  '/calendars/{calendarId}/events/{eventId}/move':
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
+  "/calendars/{calendarId}/events/{eventId}/move":
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
-      description: 'Moves an event to another calendar, i.e. changes an event''s organizer.'
+      description: "Moves an event to another calendar, i.e. changes an event's organizer."
       operationId: move_calendar_event
       parameters:
         - description: Calendar identifier of the source calendar where the event currently is on.
@@ -1209,29 +1209,29 @@ paths:
           in: query
           name: sendUpdates
           type: boolean
-          enum: 
+          enum:
             - all
             - externalOnly
             - none
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Event'
+            $ref: "#/definitions/Event"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - events
   /channels/stop:
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Stop watching resources through this channel
       operationId: stop_channel
@@ -1239,15 +1239,15 @@ paths:
         - in: body
           name: resource
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
       responses:
-        '200':
+        "200":
           description: Successful response
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - channels
   /colors:
@@ -1255,34 +1255,34 @@ paths:
       description: Returns the color definitions for calendars and events.
       operationId: get_calendar_colors
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Colors'
+            $ref: "#/definitions/Colors"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - colors
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
   /freeBusy:
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Returns free/busy information for a set of calendars.
       operationId: get_calendars_freebusy
@@ -1290,17 +1290,17 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/FreeBusyRequest'
+            $ref: "#/definitions/FreeBusyRequest"
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/FreeBusyResponse'
+            $ref: "#/definitions/FreeBusyResponse"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - freebusy
   /users/me/calendarList:
@@ -1344,25 +1344,25 @@ paths:
           name: syncToken
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/CalendarList'
+            $ref: "#/definitions/CalendarList"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - calendarList
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Adds an entry to the user's calendar list.
       operationId: create_calendarlist_entry
@@ -1370,30 +1370,30 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/CalendarListEntry'
-        - description: 'Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.'
+            $ref: "#/definitions/CalendarListEntry"
+        - description: "Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False."
           in: query
           name: colorRgbFormat
           type: boolean
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/CalendarListEntry'
+            $ref: "#/definitions/CalendarListEntry"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - calendarList
   /users/me/calendarList/watch:
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Watch for changes to CalendarList resources.
       operationId: watch_calendarlist
@@ -1419,7 +1419,7 @@ paths:
         - in: body
           name: resource
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
         - description: Whether to include deleted calendar list entries in the result. Optional. The default is False.
           in: query
           name: showDeleted
@@ -1438,18 +1438,18 @@ paths:
           name: syncToken
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - calendarList
-  '/users/me/calendarList/{calendarId}':
+  "/users/me/calendarList/{calendarId}":
     delete:
       description: Deletes an entry on the user's calendar list.
       operationId: delete_calendarlist_entry
@@ -1460,11 +1460,11 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - calendarList
     get:
@@ -1477,25 +1477,25 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/CalendarListEntry'
+            $ref: "#/definitions/CalendarListEntry"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - calendarList
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     patch:
       description: Updates an entry on the user's calendar list, with patch semantics.
       operationId: update_calendarlist_entry
@@ -1503,26 +1503,26 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/CalendarListEntry'
+            $ref: "#/definitions/CalendarListEntry"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
           required: true
           type: string
-        - description: 'Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.'
+        - description: "Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False."
           in: query
           name: colorRgbFormat
           type: boolean
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/CalendarListEntry'
+            $ref: "#/definitions/CalendarListEntry"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
-        - calendarList      
+        - calendarList
     put:
       description: Updates an entry on the user's calendar list.
       operationId: update_calendarlist_entry_entire
@@ -1530,24 +1530,24 @@ paths:
         - in: body
           name: body
           schema:
-            $ref: '#/definitions/CalendarListEntry'
+            $ref: "#/definitions/CalendarListEntry"
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
           name: calendarId
           required: true
           type: string
-        - description: 'Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.'
+        - description: "Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False."
           in: query
           name: colorRgbFormat
           type: boolean
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/CalendarListEntry'
+            $ref: "#/definitions/CalendarListEntry"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
       tags:
         - calendarList
   /users/me/settings:
@@ -1573,34 +1573,34 @@ paths:
           name: syncToken
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Settings'
+            $ref: "#/definitions/Settings"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - settings
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
   /users/me/settings/watch:
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
     post:
       description: Watch for changes to Settings resources.
       operationId: watch_settings
@@ -1617,7 +1617,7 @@ paths:
         - in: body
           name: resource
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
         - description: |-
             Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
             If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
@@ -1627,18 +1627,18 @@ paths:
           name: syncToken
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Channel'
+            $ref: "#/definitions/Channel"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - settings
-  '/users/me/settings/{setting}':
+  "/users/me/settings/{setting}":
     get:
       description: Returns a single user setting.
       operationId: get_setting
@@ -1649,25 +1649,25 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           schema:
-            $ref: '#/definitions/Setting'
+            $ref: "#/definitions/Setting"
       security:
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar'
+            - "https://www.googleapis.com/auth/calendar"
         - Oauth2:
-            - 'https://www.googleapis.com/auth/calendar.readonly'
+            - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - settings
     parameters:
-      - $ref: '#/parameters/alt'
-      - $ref: '#/parameters/fields'
-      - $ref: '#/parameters/key'
-      - $ref: '#/parameters/oauth_token'
-      - $ref: '#/parameters/prettyPrint'
-      - $ref: '#/parameters/quotaUser'
-      - $ref: '#/parameters/userIp'
+      - $ref: "#/parameters/alt"
+      - $ref: "#/parameters/fields"
+      - $ref: "#/parameters/key"
+      - $ref: "#/parameters/oauth_token"
+      - $ref: "#/parameters/prettyPrint"
+      - $ref: "#/parameters/quotaUser"
+      - $ref: "#/parameters/userIp"
 definitions:
   Acl:
     properties:
@@ -1677,17 +1677,17 @@ definitions:
       items:
         description: List of rules on the access control list.
         items:
-          $ref: '#/definitions/AclRule'
+          $ref: "#/definitions/AclRule"
         type: array
       kind:
-        default: 'calendar#acl'
+        default: "calendar#acl"
         description: 'Type of the collection ("calendar#acl").'
         type: string
       nextPageToken:
-        description: 'Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided.'
+        description: "Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided."
         type: string
       nextSyncToken:
-        description: 'Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided.'
+        description: "Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided."
         type: string
     type: object
   AclRule:
@@ -1699,7 +1699,7 @@ definitions:
         description: Identifier of the ACL rule.
         type: string
       kind:
-        default: 'calendar#aclRule'
+        default: "calendar#aclRule"
         description: 'Type of the resource ("calendar#aclRule").'
         type: string
       role:
@@ -1730,8 +1730,8 @@ definitions:
   Calendar:
     properties:
       conferenceProperties:
-        $ref: '#/definitions/ConferenceProperties'
-        description: 'Conferencing properties for this calendar, for example what types of conferences are allowed.'
+        $ref: "#/definitions/ConferenceProperties"
+        description: "Conferencing properties for this calendar, for example what types of conferences are allowed."
       description:
         description: Description of the calendar. Optional.
         type: string
@@ -1742,7 +1742,7 @@ definitions:
         description: Identifier of the calendar. To retrieve IDs call the get_calendarlist method. Note that when creating a calendar, this field should not be filled out.
         type: string
       kind:
-        default: 'calendar#calendar'
+        default: "calendar#calendar"
         description: 'Type of the resource ("calendar#calendar").'
         type: string
       location:
@@ -1763,17 +1763,17 @@ definitions:
       items:
         description: Calendars that are present on the user's calendar list.
         items:
-          $ref: '#/definitions/CalendarListEntry'
+          $ref: "#/definitions/CalendarListEntry"
         type: array
       kind:
-        default: 'calendar#calendarList'
+        default: "calendar#calendarList"
         description: 'Type of the collection ("calendar#calendarList").'
         type: string
       nextPageToken:
-        description: 'Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided.'
+        description: "Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided."
         type: string
       nextSyncToken:
-        description: 'Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided.'
+        description: "Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided."
         type: string
     type: object
   CalendarListEntry:
@@ -1793,12 +1793,12 @@ definitions:
         description: The color of the calendar. This is an ID referring to an entry in the calendar section of the colors definition (see the colors endpoint). This property is superseded by the backgroundColor and foregroundColor properties and can be ignored when using these properties. Optional.
         type: string
       conferenceProperties:
-        $ref: '#/definitions/ConferenceProperties'
-        description: 'Conferencing properties for this calendar, for example what types of conferences are allowed.'
+        $ref: "#/definitions/ConferenceProperties"
+        description: "Conferencing properties for this calendar, for example what types of conferences are allowed."
       defaultReminders:
         description: The default reminders that the authenticated user has for this calendar.
         items:
-          $ref: '#/definitions/EventReminder'
+          $ref: "#/definitions/EventReminder"
         type: array
       deleted:
         default: false
@@ -1821,7 +1821,7 @@ definitions:
         description: Identifier of the calendar.
         type: string
       kind:
-        default: 'calendar#calendarListEntry'
+        default: "calendar#calendarListEntry"
         description: 'Type of the resource ("calendar#calendarListEntry").'
         type: string
       location:
@@ -1833,7 +1833,7 @@ definitions:
           notifications:
             description: The list of notifications set for this calendar.
             items:
-              $ref: '#/definitions/CalendarNotification'
+              $ref: "#/definitions/CalendarNotification"
             type: array
         type: object
       primary:
@@ -1878,14 +1878,14 @@ definitions:
         description: The address where notifications are delivered for this channel.
         type: string
       expiration:
-        description: 'Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional.'
+        description: "Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional."
         format: int64
         type: string
       id:
         description: A UUID or similar unique string that identifies this channel.
         type: string
       kind:
-        default: 'api#channel'
+        default: "api#channel"
         description: 'Identifies this as a notification channel used to watch for changes to a resource. Value: the fixed string "api#channel".'
         type: string
       params:
@@ -1923,18 +1923,18 @@ definitions:
     properties:
       calendar:
         additionalProperties:
-          $ref: '#/definitions/ColorDefinition'
+          $ref: "#/definitions/ColorDefinition"
           description: A calendar color defintion.
-        description: 'A global palette of calendar colors, mapping from the color ID to its definition. A calendarListEntry resource refers to one of these color IDs in its color field. Read-only.'
+        description: "A global palette of calendar colors, mapping from the color ID to its definition. A calendarListEntry resource refers to one of these color IDs in its color field. Read-only."
         type: object
       event:
         additionalProperties:
-          $ref: '#/definitions/ColorDefinition'
+          $ref: "#/definitions/ColorDefinition"
           description: An event color definition.
-        description: 'A global palette of event colors, mapping from the color ID to its definition. An event resource may refer to one of these color IDs in its color field. Read-only.'
+        description: "A global palette of event colors, mapping from the color ID to its definition. An event resource may refer to one of these color IDs in its color field. Read-only."
         type: object
       kind:
-        default: 'calendar#colors'
+        default: "calendar#colors"
         description: 'Type of the resource ("calendar#colors").'
         type: string
       updated:
@@ -1954,13 +1954,13 @@ definitions:
           - "hangoutsMeet": the 10-letter meeting code, for example "aaa-bbbb-ccc".  Optional.
         type: string
       conferenceSolution:
-        $ref: '#/definitions/ConferenceSolution'
+        $ref: "#/definitions/ConferenceSolution"
         description: |-
           The conference solution, such as Hangouts or Hangouts Meet.
           Unset for a conference with a failed create request.
           Either conferenceSolution and at least one entryPoint, or createRequest is required.
       createRequest:
-        $ref: '#/definitions/CreateConferenceRequest'
+        $ref: "#/definitions/CreateConferenceRequest"
         description: |-
           A request to generate a new conference and attach it to the event. The data is generated asynchronously. To see whether the data is present check the status field.
           Either conferenceSolution and at least one entryPoint, or createRequest is required.
@@ -1970,13 +1970,13 @@ definitions:
           All of them must belong to the same conference.
           Either conferenceSolution and at least one entryPoint, or createRequest is required.
         items:
-          $ref: '#/definitions/EntryPoint'
+          $ref: "#/definitions/EntryPoint"
         type: array
       notes:
-        description: 'Additional notes (such as instructions from the domain administrator, legal notices) to display to the user. Can contain HTML. The maximum length is 2048 characters. Optional.'
+        description: "Additional notes (such as instructions from the domain administrator, legal notices) to display to the user. Can contain HTML. The maximum length is 2048 characters. Optional."
         type: string
       parameters:
-        $ref: '#/definitions/ConferenceParameters'
+        $ref: "#/definitions/ConferenceParameters"
         description: Additional properties related to a conference. An example would be a solution-specific setting for enabling video streaming.
       signature:
         description: |-
@@ -1989,7 +1989,7 @@ definitions:
   ConferenceParameters:
     properties:
       addOnParameters:
-        $ref: '#/definitions/ConferenceParametersAddOnParameters'
+        $ref: "#/definitions/ConferenceParametersAddOnParameters"
         description: Additional add-on specific data.
     type: object
   ConferenceParametersAddOnParameters:
@@ -2029,7 +2029,7 @@ definitions:
         description: The user-visible icon for this solution.
         type: string
       key:
-        $ref: '#/definitions/ConferenceSolutionKey'
+        $ref: "#/definitions/ConferenceSolutionKey"
         description: The key which can uniquely identify the conference solution for this event.
       name:
         description: The user-visible name of this solution. Not localized.
@@ -2050,15 +2050,15 @@ definitions:
   CreateConferenceRequest:
     properties:
       conferenceSolutionKey:
-        $ref: '#/definitions/ConferenceSolutionKey'
-        description: 'The conference solution, such as Hangouts or Hangouts Meet.'
+        $ref: "#/definitions/ConferenceSolutionKey"
+        description: "The conference solution, such as Hangouts or Hangouts Meet."
       requestId:
         description: |-
           The client-generated unique ID for this request.
           Clients should regenerate this ID for every new request. If an ID provided is the same as for the previous request, the request is ignored.
         type: string
       status:
-        $ref: '#/definitions/ConferenceRequestStatus'
+        $ref: "#/definitions/ConferenceRequestStatus"
         description: The status of the conference create request.
     type: object
   EntryPoint:
@@ -2070,10 +2070,10 @@ definitions:
           Optional.
         type: string
       entryPointFeatures:
-        description: 'Features of the entry point, such as being toll or toll-free. One entry point can have multiple features. However, toll and toll-free cannot be both set on the same entry point.'
+        description: "Features of the entry point, such as being toll or toll-free. One entry point can have multiple features. However, toll and toll-free cannot be both set on the same entry point."
         items:
           type: string
-        type: array        
+        type: array
       entryPointType:
         description: |-
           The type of the conference entry point.
@@ -2134,7 +2134,7 @@ definitions:
   Error:
     properties:
       domain:
-        description: 'Domain, or broad category, of the error.'
+        description: "Domain, or broad category, of the error."
         type: string
       reason:
         description: |-
@@ -2157,23 +2157,23 @@ definitions:
           In order to modify attachments the supportsAttachments request parameter should be set to true.
           There can be at most 25 attachments per event,
         items:
-          $ref: '#/definitions/EventAttachment'
+          $ref: "#/definitions/EventAttachment"
         type: array
       attendees:
         description: The attendees of the event. See the Events with attendees guide for more information on scheduling events with other calendar users.
         items:
-          $ref: '#/definitions/EventAttendee'
+          $ref: "#/definitions/EventAttendee"
         type: array
       attendeesOmitted:
         default: false
-        description: 'Whether attendees may have been omitted from the event''s representation. When retrieving an event, this may be due to a restriction specified by the maxAttendee query parameter. When updating an event, this can be used to only update the participant''s response. Optional. The default is False.'
+        description: "Whether attendees may have been omitted from the event's representation. When retrieving an event, this may be due to a restriction specified by the maxAttendee query parameter. When updating an event, this can be used to only update the participant's response. Optional. The default is False."
         type: boolean
       colorId:
         description: The color of the event. This is an ID referring to an entry in the event section of the colors definition (see the  colors endpoint). Optional.
         type: string
       conferenceData:
-        $ref: '#/definitions/ConferenceData'
-        description: 'The conference-related information, such as details of a Hangouts Meet conference. To create new conference details use the createRequest field. To persist your changes, remember to set the conferenceDataVersion request parameter to 1 for all event modification requests.'
+        $ref: "#/definitions/ConferenceData"
+        description: "The conference-related information, such as details of a Hangouts Meet conference. To create new conference details use the createRequest field. To persist your changes, remember to set the conferenceDataVersion request parameter to 1 for all event modification requests."
       created:
         description: Creation time of the event (as a RFC3339 timestamp). Read-only.
         format: date-time
@@ -2182,13 +2182,13 @@ definitions:
         description: The creator of the event. Read-only.
         properties:
           displayName:
-            description: 'The creator''s name, if available.'
+            description: "The creator's name, if available."
             type: string
           email:
-            description: 'The creator''s email address, if available.'
+            description: "The creator's email address, if available."
             type: string
           id:
-            description: 'The creator''s Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API'
+            description: "The creator's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API"
             type: string
           self:
             default: false
@@ -2199,11 +2199,11 @@ definitions:
         description: Description of the event. Optional.
         type: string
       end:
-        $ref: '#/definitions/EventDateTime'
-        description: 'The (exclusive) end time of the event. For a recurring event, this is the end time of the first instance.'
+        $ref: "#/definitions/EventDateTime"
+        description: "The (exclusive) end time of the event. For a recurring event, this is the end time of the first instance."
       endTimeUnspecified:
         default: false
-        description: 'Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False.'
+        description: "Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False."
         type: boolean
       etag:
         description: ETag of the resource.
@@ -2293,7 +2293,7 @@ definitions:
           Note that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs.
         type: string
       kind:
-        default: 'calendar#event'
+        default: "calendar#event"
         description: 'Type of the resource ("calendar#event").'
         type: string
       location:
@@ -2304,16 +2304,16 @@ definitions:
         description: 'Whether this is a locked event copy where no changes can be made to the main event fields "summary", "description", "location", "start", "end" or "recurrence". The default is False. Read-Only.'
         type: boolean
       organizer:
-        description: 'The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in attendees with the organizer field set to True. To change the organizer, use the move operation. Read-only, except when importing an event.'
+        description: "The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in attendees with the organizer field set to True. To change the organizer, use the move operation. Read-only, except when importing an event."
         properties:
           displayName:
-            description: 'The organizer''s name, if available.'
+            description: "The organizer's name, if available."
             type: string
           email:
-            description: 'The organizer''s email address, if available. It must be a valid email address as per RFC5322.'
+            description: "The organizer's email address, if available. It must be a valid email address as per RFC5322."
             type: string
           id:
-            description: 'The organizer''s Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API'
+            description: "The organizer's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API"
             type: string
           self:
             default: false
@@ -2321,27 +2321,27 @@ definitions:
             type: boolean
         type: object
       originalStartTime:
-        $ref: '#/definitions/EventDateTime'
-        description: 'For an instance of a recurring event, this is the time at which this event would start according to the recurrence data in the recurring event identified by recurringEventId. It uniquely identifies the instance within the recurring event series even if the instance was moved to a different time. Immutable.'
+        $ref: "#/definitions/EventDateTime"
+        description: "For an instance of a recurring event, this is the time at which this event would start according to the recurrence data in the recurring event identified by recurringEventId. It uniquely identifies the instance within the recurring event series even if the instance was moved to a different time. Immutable."
       privateCopy:
         default: false
         description: Whether this is a private event copy where changes are not shared with other copies on other calendars. Optional. Immutable. The default is False.
         type: boolean
       recurrence:
-        description: 'List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event, as specified in RFC5545. Note that DTSTART and DTEND lines are not allowed in this field; event start and end times are specified in the start and end fields. This field is omitted for single events or instances of recurring events.'
+        description: "List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event, as specified in RFC5545. Note that DTSTART and DTEND lines are not allowed in this field; event start and end times are specified in the start and end fields. This field is omitted for single events or instances of recurring events."
         items:
           type: string
         type: array
       recurringEventId:
-        description: 'For an instance of a recurring event, this is the id of the recurring event to which this instance belongs. Immutable.'
+        description: "For an instance of a recurring event, this is the id of the recurring event to which this instance belongs. Immutable."
         type: string
       reminders:
         description: Information about the event's reminders for the authenticated user.
         properties:
           overrides:
-            description: 'If the event doesn''t use the default reminders, this lists the reminders specific to the event, or, if not set, indicates that no reminders are set for this event. The maximum number of override reminders is 5.'
+            description: "If the event doesn't use the default reminders, this lists the reminders specific to the event, or, if not set, indicates that no reminders are set for this event. The maximum number of override reminders is 5."
             items:
-              $ref: '#/definitions/EventReminder'
+              $ref: "#/definitions/EventReminder"
             type: array
           useDefault:
             description: Whether the default reminders of the calendar apply to the event.
@@ -2352,7 +2352,7 @@ definitions:
         format: int32
         type: integer
       source:
-        description: 'Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event.'
+        description: "Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event."
         properties:
           title:
             description: Title of the source; for example a title of a web page or an email subject.
@@ -2362,8 +2362,8 @@ definitions:
             type: string
         type: object
       start:
-        $ref: '#/definitions/EventDateTime'
-        description: 'The (inclusive) start time of the event. For a recurring event, this is the start time of the first instance.'
+        $ref: "#/definitions/EventDateTime"
+        description: "The (inclusive) start time of the event. For a recurring event, this is the start time of the first instance."
       status:
         description: |-
           Status of the event. Optional. Possible values are:  
@@ -2434,13 +2434,13 @@ definitions:
         description: The attendee's response comment. Optional.
         type: string
       displayName:
-        description: 'The attendee''s name, if available. Optional.'
+        description: "The attendee's name, if available. Optional."
         type: string
       email:
-        description: 'The attendee''s email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322.'
+        description: "The attendee's email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322."
         type: string
       id:
-        description: 'The attendee''s Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API'
+        description: "The attendee's Profile ID, if available. It corresponds to the id field in the People collection of the Google+ API"
         type: string
       optional:
         default: false
@@ -2473,7 +2473,7 @@ definitions:
         format: date
         type: string
       dateTime:
-        description: 'The time, as a combined date-time value (formatted according to RFC3339). A time zone offset is required unless a time zone is explicitly specified in timeZone.'
+        description: "The time, as a combined date-time value (formatted according to RFC3339). A time zone offset is required unless a time zone is explicitly specified in timeZone."
         format: date-time
         type: string
       timeZone:
@@ -2508,7 +2508,7 @@ definitions:
       defaultReminders:
         description: The default reminders on the calendar for the authenticated user. These reminders apply to all events on this calendar that do not explicitly override them (i.e. do not have reminders.useDefault set to True).
         items:
-          $ref: '#/definitions/EventReminder'
+          $ref: "#/definitions/EventReminder"
         type: array
       description:
         description: Description of the calendar. Read-only.
@@ -2519,17 +2519,17 @@ definitions:
       items:
         description: List of events on the calendar.
         items:
-          $ref: '#/definitions/Event'
+          $ref: "#/definitions/Event"
         type: array
       kind:
-        default: 'calendar#events'
+        default: "calendar#events"
         description: 'Type of the collection ("calendar#events").'
         type: string
       nextPageToken:
-        description: 'Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided.'
+        description: "Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided."
         type: string
       nextSyncToken:
-        description: 'Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided.'
+        description: "Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided."
         type: string
       summary:
         description: Title of the calendar. Read-only.
@@ -2547,12 +2547,12 @@ definitions:
       busy:
         description: List of time ranges during which this calendar should be regarded as busy.
         items:
-          $ref: '#/definitions/TimePeriod'
+          $ref: "#/definitions/TimePeriod"
         type: array
       errors:
         description: Optional error(s) (if computation for the calendar failed).
         items:
-          $ref: '#/definitions/Error'
+          $ref: "#/definitions/Error"
         type: array
     type: object
   FreeBusyGroup:
@@ -2565,7 +2565,7 @@ definitions:
       errors:
         description: Optional error(s) (if computation for the group failed).
         items:
-          $ref: '#/definitions/Error'
+          $ref: "#/definitions/Error"
         type: array
     type: object
   FreeBusyRequest:
@@ -2581,7 +2581,7 @@ definitions:
       items:
         description: List of calendars and/or groups to query.
         items:
-          $ref: '#/definitions/FreeBusyRequestItem'
+          $ref: "#/definitions/FreeBusyRequestItem"
         type: array
       timeMax:
         description: The end of the interval for the query formatted as per RFC3339.
@@ -2606,18 +2606,18 @@ definitions:
     properties:
       calendars:
         additionalProperties:
-          $ref: '#/definitions/FreeBusyCalendar'
+          $ref: "#/definitions/FreeBusyCalendar"
           description: Free/busy expansions for a single calendar.
         description: List of free/busy information for calendars.
         type: object
       groups:
         additionalProperties:
-          $ref: '#/definitions/FreeBusyGroup'
+          $ref: "#/definitions/FreeBusyGroup"
           description: List of calendars that are members of this group.
         description: Expansion of groups.
         type: object
       kind:
-        default: 'calendar#freeBusy'
+        default: "calendar#freeBusy"
         description: 'Type of the resource ("calendar#freeBusy").'
         type: string
       timeMax:
@@ -2638,7 +2638,7 @@ definitions:
         description: The id of the user setting.
         type: string
       kind:
-        default: 'calendar#setting'
+        default: "calendar#setting"
         description: 'Type of the resource ("calendar#setting").'
         type: string
       value:
@@ -2653,17 +2653,17 @@ definitions:
       items:
         description: List of user settings.
         items:
-          $ref: '#/definitions/Setting'
+          $ref: "#/definitions/Setting"
         type: array
       kind:
-        default: 'calendar#settings'
+        default: "calendar#settings"
         description: 'Type of the collection ("calendar#settings").'
         type: string
       nextPageToken:
-        description: 'Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided.'
+        description: "Token used to access the next page of this result. Omitted if no further results are available, in which case nextSyncToken is provided."
         type: string
       nextSyncToken:
-        description: 'Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided.'
+        description: "Token used at a later point in time to retrieve only the entries that have changed since this result was returned. Omitted if further results are available, in which case nextPageToken is provided."
         type: string
     type: object
   TimePeriod:
