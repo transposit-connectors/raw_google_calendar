@@ -41,46 +41,6 @@ securityDefinitions:
       "https://www.googleapis.com/auth/calendar": Manage your calendars
       "https://www.googleapis.com/auth/calendar.readonly": View your calendars
     type: oauth2
-parameters:
-  alt:
-    default: json
-    description: Data format for the response.
-    enum:
-      - json
-    in: query
-    name: alt
-    type: string
-  fields:
-    description: Selector specifying which fields to include in a partial response.
-    in: query
-    name: fields
-    type: string
-  key:
-    description: "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."
-    in: query
-    name: key
-    type: string
-  oauth_token:
-    description: OAuth 2.0 token for the current user.
-    in: query
-    name: oauth_token
-    type: string
-  prettyPrint:
-    default: true
-    description: Returns response with indentations and line breaks.
-    in: query
-    name: prettyPrint
-    type: boolean
-  quotaUser:
-    description: An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-    in: query
-    name: quotaUser
-    type: string
-  userIp:
-    description: Deprecated. Please use quotaUser instead.
-    in: query
-    name: userIp
-    type: string
 tags:
   - name: acl
   - name: calendarList
@@ -92,14 +52,6 @@ tags:
   - name: settings
 paths:
   /calendars:
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Creates a secondary calendar.
       operationId: create_calendar
@@ -157,14 +109,6 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - calendars
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     patch:
       description: Updates some metadata for a calendar, using patch semantics.
       operationId: update_calendar
@@ -252,14 +196,6 @@ paths:
             - "https://www.googleapis.com/auth/calendar"
       tags:
         - acl
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Creates an access control rule.
       operationId: create_acl_rule
@@ -273,10 +209,6 @@ paths:
           name: calendarId
           required: true
           type: string
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -296,14 +228,6 @@ paths:
       tags:
         - acl
   "/calendars/{calendarId}/acl/watch":
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Watch for changes to ACL resources.
       operationId: watch_acl
@@ -397,14 +321,6 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - acl
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     patch:
       description: Updates an access control rule with patch semantics.
       operationId: update_acl_rule
@@ -423,10 +339,6 @@ paths:
           name: ruleId
           required: true
           type: string
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -463,10 +375,6 @@ paths:
           name: ruleId
           required: true
           type: string
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -486,14 +394,6 @@ paths:
       tags:
         - acl
   "/calendars/{calendarId}/clear":
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.
       operationId: clear_calendar
@@ -627,14 +527,6 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - events
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Creates an event.
       operationId: create_calendar_event
@@ -659,10 +551,6 @@ paths:
           minimum: 1
           name: maxAttendees
           type: integer
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -686,14 +574,6 @@ paths:
       tags:
         - events
   "/calendars/{calendarId}/events/import":
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Imports an event. This operation is used to add a private copy of an existing event to a calendar.
       operationId: import_calendar_event
@@ -728,14 +608,6 @@ paths:
       tags:
         - events
   "/calendars/{calendarId}/events/quickAdd":
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Creates an event based on a simple text string.
       operationId: quickAdd_calendar_event
@@ -745,10 +617,6 @@ paths:
           name: calendarId
           required: true
           type: string
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -773,14 +641,6 @@ paths:
       tags:
         - events
   "/calendars/{calendarId}/events/watch":
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Watch for changes to Events resources.
       operationId: watch_calendar_events
@@ -915,10 +775,6 @@ paths:
           name: eventId
           required: true
           type: string
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -974,14 +830,6 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - events
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     patch:
       description: Updates an event with patch semantics.
       operationId: update_calendar_event
@@ -1015,10 +863,6 @@ paths:
           minimum: 1
           name: maxAttendees
           type: integer
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -1074,10 +918,6 @@ paths:
           minimum: 1
           name: maxAttendees
           type: integer
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -1165,23 +1005,7 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - events
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
   "/calendars/{calendarId}/events/{eventId}/move":
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: "Moves an event to another calendar, i.e. changes an event's organizer."
       operationId: move_calendar_event
@@ -1201,10 +1025,6 @@ paths:
           name: eventId
           required: true
           type: string
-        - description: Deprecated. Use sendUpdates instead
-          in: query
-          name: sendNotifications
-          type: boolean
         - description: Guests who should receive notifications about the creation of the new event.
           in: query
           name: sendUpdates
@@ -1224,14 +1044,6 @@ paths:
       tags:
         - events
   /channels/stop:
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Stop watching resources through this channel
       operationId: stop_channel
@@ -1266,23 +1078,7 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - colors
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
   /freeBusy:
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Returns free/busy information for a set of calendars.
       operationId: get_calendars_freebusy
@@ -1355,14 +1151,6 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - calendarList
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Adds an entry to the user's calendar list.
       operationId: create_calendarlist_entry
@@ -1386,14 +1174,6 @@ paths:
       tags:
         - calendarList
   /users/me/calendarList/watch:
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Watch for changes to CalendarList resources.
       operationId: watch_calendarlist
@@ -1488,14 +1268,6 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - calendarList
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     patch:
       description: Updates an entry on the user's calendar list, with patch semantics.
       operationId: update_calendarlist_entry
@@ -1584,23 +1356,7 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - settings
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
   /users/me/settings/watch:
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
     post:
       description: Watch for changes to Settings resources.
       operationId: watch_settings
@@ -1660,14 +1416,6 @@ paths:
             - "https://www.googleapis.com/auth/calendar.readonly"
       tags:
         - settings
-    parameters:
-      - $ref: "#/parameters/alt"
-      - $ref: "#/parameters/fields"
-      - $ref: "#/parameters/key"
-      - $ref: "#/parameters/oauth_token"
-      - $ref: "#/parameters/prettyPrint"
-      - $ref: "#/parameters/quotaUser"
-      - $ref: "#/parameters/userIp"
 definitions:
   Acl:
     properties:
