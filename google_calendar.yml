@@ -159,6 +159,13 @@ paths:
     get:
       description: Returns the rules in the access control list for the calendar.
       operationId: get_acl_rules
+      x-pagination:
+        resultsPath: "items"
+        cursor:
+          cursorPath: "nextPageToken"
+          cursorParam: "pageToken"
+          limitParam: "maxResults"
+          maxLimit: 250
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -415,6 +422,13 @@ paths:
     get:
       description: Returns events on the specified calendar.
       operationId: get_calendar_events
+      x-pagination:
+        resultsPath: "items"
+        cursor:
+          cursorPath: "nextPageToken"
+          cursorParam: "pageToken"
+          limitParam: "maxResults"
+          maxLimit: 250
       parameters:
         - description: "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but will be ignored. If timeMin is set, timeMax must be greater than timeMin."
           in: query
@@ -944,6 +958,13 @@ paths:
     get:
       description: Returns instances of the specified recurring event.
       operationId: get_calendar_event_instances
+      x-pagination:
+        resultsPath: "items"
+        cursor:
+          cursorPath: "nextPageToken"
+          cursorParam: "pageToken"
+          limitParam: "maxResults"
+          maxLimit: 250
       parameters:
         - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
@@ -1103,6 +1124,13 @@ paths:
     get:
       description: Returns entries on the user's calendar list. The CalendarList is a collection of all calendar entries that a user has added to their list (shown in the left panel of the web UI). You can use it to add and remove existing calendars to/from the users’ list. You also use it to retrieve and set the values of user-specific calendar properties, such as default reminders. Another example is foreground color, since different users can have different colors set for the same calendar.
       operationId: get_calendarlist
+      x-pagination:
+        resultsPath: "items"
+        cursor:
+          cursorPath: "nextPageToken"
+          cursorParam: "pageToken"
+          limitParam: "maxResults"
+          maxLimit: 250
       parameters:
         - description: Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
           in: query
@@ -1326,6 +1354,13 @@ paths:
     get:
       description: Returns all user settings for the authenticated user.
       operationId: get_my_settings
+      x-pagination:
+        resultsPath: "items"
+        cursor:
+          cursorPath: "nextPageToken"
+          cursorParam: "pageToken"
+          limitParam: "maxResults"
+          maxLimit: 250
       parameters:
         - description: Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
           in: query
