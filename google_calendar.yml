@@ -55,6 +55,7 @@ paths:
     post:
       description: Creates a secondary calendar.
       operationId: create_calendar
+      x-originalOperationId: calendar.calendars.insert
       parameters:
         - in: body
           name: body
@@ -74,6 +75,7 @@ paths:
     delete:
       description: Deletes a secondary calendar. Use calendars.clear for clearing all events on primary calendars.
       operationId: delete_calendar
+      x-originalOperationId: calendar.calendars.delete
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -91,6 +93,7 @@ paths:
     get:
       description: Returns metadata for a calendar.
       operationId: get_calendar
+      x-originalOperationId: calendar.calendars.get
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -112,6 +115,7 @@ paths:
     patch:
       description: Updates some metadata for a calendar, using patch semantics.
       operationId: update_calendar
+      x-originalOperationId: calendar.calendars.patch
       parameters:
         - in: body
           name: body
@@ -135,6 +139,7 @@ paths:
     put:
       description: Updates all metadata for a a calendar. Any fields that are not included will be cleared.
       operationId: update_calendar_entire
+      x-originalOperationId: calendar.calendars.update
       parameters:
         - in: body
           name: body
@@ -159,6 +164,7 @@ paths:
     get:
       description: Returns the rules in the access control list for the calendar.
       operationId: get_acl_rules
+      x-originalOperationId: calendar.acl.list
       x-pagination:
         resultsPath: "items"
         cursor:
@@ -206,6 +212,7 @@ paths:
     post:
       description: Creates an access control rule.
       operationId: create_acl_rule
+      x-originalOperationId: calendar.acl.insert
       parameters:
         - in: body
           name: body
@@ -238,6 +245,7 @@ paths:
     post:
       description: Watch for changes to ACL resources.
       operationId: watch_acl
+      x-originalOperationId: calendar.acl.watch
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -283,6 +291,7 @@ paths:
     delete:
       description: Deletes an access control rule.
       operationId: delete_acl_rule
+      x-originalOperationId: calendar.acl.delete
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -305,6 +314,7 @@ paths:
     get:
       description: Returns an access control rule.
       operationId: get_acl_rule
+      x-originalOperationId: calendar.acl.get
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -331,6 +341,7 @@ paths:
     patch:
       description: Updates an access control rule with patch semantics.
       operationId: update_acl_rule
+      x-originalOperationId: calendar.acl.patch
       parameters:
         - in: body
           name: body
@@ -367,6 +378,7 @@ paths:
     put:
       description: Updates an access control rule.
       operationId: update_acl_rule_all
+      x-originalOperationId: calendar.acl.update
       parameters:
         - in: body
           name: body
@@ -404,6 +416,7 @@ paths:
     post:
       description: Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.
       operationId: clear_calendar
+      x-originalOperationId: calendar.calendars.clear
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -422,6 +435,7 @@ paths:
     get:
       description: Returns events on the specified calendar.
       operationId: get_calendar_events
+      x-originalOperationId: calendar.events.list
       x-pagination:
         resultsPath: "items"
         cursor:
@@ -544,6 +558,7 @@ paths:
     post:
       description: Creates an event.
       operationId: create_calendar_event
+      x-originalOperationId: calendar.events.insert
       parameters:
         - in: body
           name: body
@@ -591,6 +606,7 @@ paths:
     post:
       description: Imports an event. This operation is used to add a private copy of an existing event to a calendar.
       operationId: import_calendar_event
+      x-originalOperationId: calendar.events.import
       parameters:
         - in: body
           name: body
@@ -625,6 +641,7 @@ paths:
     post:
       description: Creates an event based on a simple text string.
       operationId: quickAdd_calendar_event
+      x-originalOperationId: calendar.events.quickAdd
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -658,6 +675,7 @@ paths:
     post:
       description: Watch for changes to Events resources.
       operationId: watch_calendar_events
+      x-originalOperationId: calendar.events.watch
       parameters:
         - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
@@ -778,6 +796,7 @@ paths:
     delete:
       description: Deletes an event.
       operationId: delete_calendar_event
+      x-originalOperationId: calendar.events.delete
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -808,6 +827,7 @@ paths:
     get:
       description: Returns an event.
       operationId: get_calendar_event
+      x-originalOperationId: calendar.events.get
       parameters:
         - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
@@ -847,6 +867,7 @@ paths:
     patch:
       description: Updates an event with patch semantics.
       operationId: update_calendar_event
+      x-originalOperationId: calendar.events.patch
       parameters:
         - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
@@ -902,6 +923,7 @@ paths:
     put:
       description: Updates an event.
       operationId: update_calendar_event_entire
+      x-originalOperationId: calendar.events.update
       parameters:
         - description: "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False."
           in: query
@@ -958,6 +980,7 @@ paths:
     get:
       description: Returns instances of the specified recurring event.
       operationId: get_calendar_event_instances
+      x-originalOperationId: calendar.events.instances
       x-pagination:
         resultsPath: "items"
         cursor:
@@ -1030,6 +1053,7 @@ paths:
     post:
       description: "Moves an event to another calendar, i.e. changes an event's organizer."
       operationId: move_calendar_event
+      x-originalOperationId: calendar.events.move
       parameters:
         - description: Calendar identifier of the source calendar where the event currently is on.
           in: path
@@ -1068,6 +1092,7 @@ paths:
     post:
       description: Stop watching resources through this channel
       operationId: stop_channel
+      x-originalOperationId: calendar.channels.stop
       parameters:
         - in: body
           name: resource
@@ -1087,6 +1112,7 @@ paths:
     get:
       description: Returns the color definitions for calendars and events.
       operationId: get_calendar_colors
+      x-originalOperationId: calendar.colors.get
       responses:
         "200":
           description: Successful response
@@ -1103,6 +1129,7 @@ paths:
     post:
       description: Returns free/busy information for a set of calendars.
       operationId: get_calendars_freebusy
+      x-originalOperationId: calendar.freebusy.query
       parameters:
         - in: body
           name: body
@@ -1124,6 +1151,7 @@ paths:
     get:
       description: Returns entries on the user's calendar list. The CalendarList is a collection of all calendar entries that a user has added to their list (shown in the left panel of the web UI). You can use it to add and remove existing calendars to/from the users’ list. You also use it to retrieve and set the values of user-specific calendar properties, such as default reminders. Another example is foreground color, since different users can have different colors set for the same calendar.
       operationId: get_calendarlist
+      x-originalOperationId: calendar.calendarList.list
       x-pagination:
         resultsPath: "items"
         cursor:
@@ -1182,6 +1210,7 @@ paths:
     post:
       description: Adds an entry to the user's calendar list.
       operationId: create_calendarlist_entry
+      x-originalOperationId: calendar.calendarList.insert
       parameters:
         - in: body
           name: body
@@ -1205,6 +1234,7 @@ paths:
     post:
       description: Watch for changes to CalendarList resources.
       operationId: watch_calendarlist
+      x-originalOperationId: calendar.calendarList.watch
       parameters:
         - description: Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
           in: query
@@ -1261,6 +1291,7 @@ paths:
     delete:
       description: Deletes an entry on the user's calendar list.
       operationId: delete_calendarlist_entry
+      x-originalOperationId: calendar.calendarList.delete
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -1278,6 +1309,7 @@ paths:
     get:
       description: Returns an entry on the user's calendar list.
       operationId: get_calendarlist_entry
+      x-originalOperationId: calendar.calendarList.get
       parameters:
         - description: 'Calendar identifier. To retrieve calendar IDs call the get_calendarlist method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.'
           in: path
@@ -1299,6 +1331,7 @@ paths:
     patch:
       description: Updates an entry on the user's calendar list, with patch semantics.
       operationId: update_calendarlist_entry
+      x-originalOperationId: calendar.calendarList.patch
       parameters:
         - in: body
           name: body
@@ -1326,6 +1359,7 @@ paths:
     put:
       description: Updates an entry on the user's calendar list.
       operationId: update_calendarlist_entry_entire
+      x-originalOperationId: calendar.calendarList.update
       parameters:
         - in: body
           name: body
@@ -1354,6 +1388,7 @@ paths:
     get:
       description: Returns all user settings for the authenticated user.
       operationId: get_my_settings
+      x-originalOperationId: calendar.settings.list
       x-pagination:
         resultsPath: "items"
         cursor:
@@ -1395,6 +1430,7 @@ paths:
     post:
       description: Watch for changes to Settings resources.
       operationId: watch_settings
+      x-originalOperationId: calendar.settings.watch
       parameters:
         - description: Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
           in: query
@@ -1433,6 +1469,7 @@ paths:
     get:
       description: Returns a single user setting.
       operationId: get_setting
+      x-originalOperationId: calendar.settings.get
       parameters:
         - description: The id of the user setting.
           in: path
