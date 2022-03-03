@@ -69,7 +69,7 @@ paths:
       x-originalOperationId: calendar.calendars.delete
       description: Deletes a secondary calendar. Use calendars.clear for clearing all events on primary calendars.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -90,7 +90,7 @@ paths:
       x-originalOperationId: calendar.calendars.get
       description: Returns metadata for a calendar.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -120,7 +120,7 @@ paths:
       x-originalOperationId: calendar.calendars.patch
       description: Updates metadata for a calendar. This method supports patch semantics.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -150,7 +150,7 @@ paths:
       x-originalOperationId: calendar.calendars.update
       description: Updates metadata for a calendar.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -188,7 +188,7 @@ paths:
           maxLimit: 250
       description: Returns the rules in the access control list for the calendar.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -241,7 +241,7 @@ paths:
       x-originalOperationId: calendar.acl.insert
       description: Creates an access control rule.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -278,7 +278,7 @@ paths:
       x-originalOperationId: calendar.acl.watch
       description: Watch for changes to ACL resources.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -336,7 +336,7 @@ paths:
       x-originalOperationId: calendar.acl.delete
       description: Deletes an access control rule.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -363,7 +363,7 @@ paths:
       x-originalOperationId: calendar.acl.get
       description: Returns an access control rule.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -399,7 +399,7 @@ paths:
       x-originalOperationId: calendar.acl.patch
       description: Updates an access control rule. This method supports patch semantics.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -440,7 +440,7 @@ paths:
       x-originalOperationId: calendar.acl.update
       description: Updates an access control rule.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -483,7 +483,7 @@ paths:
       x-originalOperationId: calendar.calendars.clear
       description: Clears a primary calendar. This operation deletes all events associated with the primary calendar of an account.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -512,7 +512,7 @@ paths:
           maxLimit: 250
       description: Returns events on the specified calendar.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -648,7 +648,7 @@ paths:
       x-originalOperationId: calendar.events.insert
       description: Creates an event.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -719,7 +719,7 @@ paths:
       x-originalOperationId: calendar.events.import
       description: Imports an event. This operation is used to add a private copy of an existing event to a calendar.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -767,7 +767,7 @@ paths:
       x-originalOperationId: calendar.events.quickAdd
       description: Creates an event based on a simple text string.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -821,7 +821,7 @@ paths:
       x-originalOperationId: calendar.events.watch
       description: Watch for changes to Events resources.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -962,7 +962,7 @@ paths:
       x-originalOperationId: calendar.events.delete
       description: Deletes an event.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -1010,7 +1010,7 @@ paths:
       x-originalOperationId: calendar.events.get
       description: Returns an event.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -1070,7 +1070,7 @@ paths:
       x-originalOperationId: calendar.events.patch
       description: Updates an event. This method supports patch semantics.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -1150,7 +1150,7 @@ paths:
       x-originalOperationId: calendar.events.update
       description: Updates an event.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -1238,7 +1238,7 @@ paths:
           maxLimit: 250
       description: Returns instances of the specified recurring event.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -1659,7 +1659,7 @@ paths:
       x-originalOperationId: calendar.calendarList.delete
       description: Removes a calendar from the user's calendar list.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -1680,7 +1680,7 @@ paths:
       x-originalOperationId: calendar.calendarList.get
       description: Returns a calendar from the user's calendar list.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -1710,7 +1710,7 @@ paths:
       x-originalOperationId: calendar.calendarList.patch
       description: Updates an existing calendar on the user's calendar list. This method supports patch semantics.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
@@ -1745,7 +1745,7 @@ paths:
       x-originalOperationId: calendar.calendarList.update
       description: Updates an existing calendar on the user's calendar list.
       parameters:
-      - description: Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
+      - description: Calendar identifier. To retrieve calendar IDs call the get_calendarlist operation. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
         in: path
         name: calendarId
         required: true
