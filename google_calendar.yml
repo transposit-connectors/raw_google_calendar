@@ -191,13 +191,6 @@ paths:
     get:
       operationId: get_acl_rules
       x-originalOperationId: calendar.acl.list
-      x-pagination:
-        resultsPath: items
-        cursor:
-          cursorPath: nextPageToken
-          cursorParam: pageToken
-          limitParam: maxResults
-          maxLimit: 250
       description: Returns the rules in the access control list for the calendar.
       parameters:
         - description:
@@ -571,13 +564,6 @@ paths:
     get:
       operationId: get_calendar_events
       x-originalOperationId: calendar.events.list
-      x-pagination:
-        resultsPath: items
-        cursor:
-          cursorPath: nextPageToken
-          cursorParam: pageToken
-          limitParam: maxResults
-          maxLimit: 250
       description: Returns events on the specified calendar.
       parameters:
         - description:
@@ -1520,13 +1506,6 @@ paths:
     get:
       operationId: get_calendar_event_instances
       x-originalOperationId: calendar.events.instances
-      x-pagination:
-        resultsPath: items
-        cursor:
-          cursorPath: nextPageToken
-          cursorParam: pageToken
-          limitParam: maxResults
-          maxLimit: 250
       description: Returns instances of the specified recurring event.
       parameters:
         - description:
@@ -1795,13 +1774,6 @@ paths:
     get:
       operationId: get_calendarlist
       x-originalOperationId: calendar.calendarList.list
-      x-pagination:
-        resultsPath: items
-        cursor:
-          cursorPath: nextPageToken
-          cursorParam: pageToken
-          limitParam: maxResults
-          maxLimit: 250
       description: Returns the calendars on the user's calendar list.
       parameters:
         - description:
@@ -2153,13 +2125,6 @@ paths:
     get:
       operationId: get_my_settings
       x-originalOperationId: calendar.settings.list
-      x-pagination:
-        resultsPath: items
-        cursor:
-          cursorPath: nextPageToken
-          cursorParam: pageToken
-          limitParam: maxResults
-          maxLimit: 250
       description: Returns all user settings for the authenticated user.
       parameters:
         - description:
